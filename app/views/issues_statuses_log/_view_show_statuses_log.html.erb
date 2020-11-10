@@ -1,0 +1,13 @@
+<%
+  issue = tab[:locals][:issue]
+%>
+<table class="list issues">
+    <%  issue.issue_status_histories.each do |change| %>
+      <tr>
+        <td></td>
+        <td><%= format_date(change.from)%></td>
+        <td><%= change.status.name%></td>
+        <td><%= StatusHistoriesHelper.status_time(change) %></td>
+      </tr>
+    <% end %>
+</table>
